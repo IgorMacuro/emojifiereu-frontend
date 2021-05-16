@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmojifyComponent } from './emojify/emojify.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ClipboardModule } from 'ngx-clipboard';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ClipboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EmojifyServiceService } from '../services/emojify-service.service';
 
@@ -15,7 +15,8 @@ import { EmojifyServiceService } from '../services/emojify-service.service';
 export class EmojifyComponent implements OnInit {
  
   form: FormGroup
-  
+  emojifiedUrl: string
+  hrefString: string
 
   constructor(private emojifyService: EmojifyServiceService) { }
   ngOnInit(): void {
@@ -27,10 +28,11 @@ export class EmojifyComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.form)
     const formData = {...this.form.value}
-    console.log(formData)
-    this.emojifyService.emojifyUrl(formData.userInput)
+    this.emojifyService.emojifyUrl(formData.userInput).subscribe(data => {
+      this.emojifiedUrl = data.encodedUrl;
+      this.hrefString = `<a href='https://emojifiereu.herokuapp.com/${this.emojifiedUrl}'>${this.emojifiedUrl}</a>`
+    })
   }
 
 }

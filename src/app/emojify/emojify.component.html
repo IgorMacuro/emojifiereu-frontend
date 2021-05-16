@@ -43,6 +43,9 @@
          <button class="btn" type="submit" [disabled]="form.invalid">emojify</button>
          
         </form>
+        <div>    
+            <p [innerHtml]="hrefString" ngxClipboard [cbContent]="hrefString"></p>   
+        </div>
         <div 
         *ngIf="form.get('userInput').invalid"
         class="validation"

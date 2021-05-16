@@ -5,6 +5,12 @@
     margin-left: 1px;
     height: 2.3em;
 }
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400italic,700italic,400,700);
+$noto-sans: 'Noto-Sans', serif;   
+
+.emoji {
+    font-family: $noto-sans;
+}
 .navbar {
     background: white;
     padding: 1em;

@@ -2,3 +2,9 @@
 :root {
     --primary-color: tomato;
 }
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400italic,700italic,400,700);
+$noto-sans: 'Noto-Sans', serif;   
+
+.emoji {
+    font-family: $noto-sans;
+}
