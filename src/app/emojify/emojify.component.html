@@ -1,0 +1,55 @@
+
+<div class="navbar">
+    <div class="container">
+        <a class="logo" href="index.html">h<span>o</span>me</a>
+        
+       
+
+        <nav>
+
+            <ul class="primary-nav">
+                <li class="current"><a href="#">features</a></li>
+                <li><a href="#">things</a></li>
+                <li><a href="#">poggers</a></li>
+            </ul>            
+            <ul class="secondary-nav">
+                <li><a href="#">contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<section class="hero"> 
+    <div class="container">
+        <div class="left-col">
+            <p class="subhead">It's Nitty &amp; Gritty</p>
+            <h1 class="primary-cta">em🤠jify!</h1>
+      
+        </div>
+    </div>
+
+</section>
+
+<section class="features-section">
+    <div class="container">
+        <ul class="features-list">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+         <input type="text" 
+         appAutoFocusDirective 
+         class="urlinput"
+         formControlName="userInput"
+         placeholder="url to emojify"   
+         />
+         
+         <button class="btn" type="submit" [disabled]="form.invalid">emojify</button>
+         
+        </form>
+        <div 
+        *ngIf="form.get('userInput').invalid"
+        class="validation"
+        >
+        <small>Please enter something</small>
+        </div>
+        
+        </ul>
+    </div>
+</section>
