@@ -29,7 +29,8 @@ export class EmojifyComponent implements OnInit {
 
   submit() {
     const formData = {...this.form.value}
-    this.emojifyService.emojifyUrl(formData.userInput).subscribe(data => {
+    const base64encodedInput = btoa(formData.userInput)
+    this.emojifyService.emojifyUrl(base64encodedInput).subscribe(data => {
       this.emojifiedUrl = data.encodedUrl;
       this.hrefString = `<a href='https://emojifiereu.herokuapp.com/${this.emojifiedUrl}'>${this.emojifiedUrl}</a>`
     })
